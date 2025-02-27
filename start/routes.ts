@@ -19,7 +19,7 @@ router
       {
         name: 'query',
         in: 'query',
-        summary: 'Parsable query. ex: "foo:bar", "baz:>0"',
+        description: 'Parsable query. ex: "foo:bar", "baz:>0"',
         required: false,
         schema: {
           type: 'string',
