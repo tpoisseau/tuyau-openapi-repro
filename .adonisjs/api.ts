@@ -11,6 +11,10 @@ type ValidatorsHowtodescribeparamsGetHead = {
   request: MakeTuyauRequest<InferInput<typeof import('../app/validators/how_to_describe_param.ts')['howToDescribeParams']>>
   response: MakeTuyauResponse<import('../app/controllers/validators_controller.ts').default['howToDescribeParams'], true>
 }
+type ReturntypesWeirdstringentriesGetHead = {
+  request: unknown
+  response: MakeTuyauResponse<import('../app/controllers/return_types_controller.ts').default['weirdStringEntries'], false>
+}
 export interface ApiDefinition {
   'validators': {
     'how_to_describe_params': {
@@ -18,6 +22,14 @@ export interface ApiDefinition {
       };
       '$get': ValidatorsHowtodescribeparamsGetHead;
       '$head': ValidatorsHowtodescribeparamsGetHead;
+    };
+  };
+  'return-types': {
+    'weird-string-entries': {
+      '$url': {
+      };
+      '$get': ReturntypesWeirdstringentriesGetHead;
+      '$head': ReturntypesWeirdstringentriesGetHead;
     };
   };
 }

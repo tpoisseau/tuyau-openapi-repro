@@ -9,6 +9,7 @@
 
 import router from '@adonisjs/core/services/router'
 
+const ReturnTypesController = () => import('#controllers/return_types_controller')
 const ValidatorsController = () => import('#controllers/validators_controller')
 
 router.on('/').renderInertia('home')
@@ -27,3 +28,5 @@ router
       },
     ],
   })
+
+router.get('return-types/weird-string-entries', [ReturnTypesController, 'weirdStringEntries'])
