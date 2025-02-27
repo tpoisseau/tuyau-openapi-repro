@@ -1,0 +1,53 @@
+openapi: "3.1.0"
+info:
+  title: "AdonisJS API"
+  version: "1.0.0"
+servers:
+  - url: "http://localhost:3333"
+paths:
+  /validators/how_to_describe_params:
+    get:
+      parameters:
+        - name: "query"
+          in: "query"
+          summary: "Parsable query. ex: \"foo:bar\", \"baz:>0\""
+          required: false
+          schema:
+            type: "string"
+        - name: "query"
+          in: "query"
+          schema:
+            type: "object"
+            required: true
+            oneOf:
+              - type: "string"
+      responses:
+        200:
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  query:
+                    oneOf:
+                      - type: "object"
+                      - type: "string"
+        422:
+          description: "Error response"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  errors:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties:
+                        message:
+                          type: "string"
+                        rule:
+                          type: "string"
+                        field:
+                          type: "string"
