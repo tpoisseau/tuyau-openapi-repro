@@ -7,11 +7,27 @@
 import type { MakeTuyauRequest, MakeTuyauResponse } from '@tuyau/utils/types'
 import type { InferInput } from '@vinejs/vine/types'
 
+type ValidatorsHowtodescribeparamsGetHead = {
+  request: MakeTuyauRequest<InferInput<typeof import('../app/validators/how_to_describe_param.ts')['howToDescribeParams']>>
+  response: MakeTuyauResponse<import('../app/controllers/validators_controller.ts').default['howToDescribeParams'], true>
+}
 export interface ApiDefinition {
+  'validators': {
+    'how_to_describe_params': {
+      '$url': {
+      };
+      '$get': ValidatorsHowtodescribeparamsGetHead;
+      '$head': ValidatorsHowtodescribeparamsGetHead;
+    };
+  };
 }
 const routes = [
 ] as const;
 export const api = {
   routes,
   definition: {} as ApiDefinition
+}
+declare module '@tuyau/inertia/types' {
+  type InertiaApi = typeof api
+  export interface Api extends InertiaApi {}
 }

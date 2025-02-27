@@ -8,5 +8,8 @@
 */
 
 import router from '@adonisjs/core/services/router'
-router.on('/').renderInertia('home')
 
+const ValidatorsController = () => import('#controllers/validators_controller')
+
+router.on('/').renderInertia('home')
+router.get('/validators/how_to_describe_params', [ValidatorsController, 'howToDescribeParams'])
