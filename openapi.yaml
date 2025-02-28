@@ -62,7 +62,7 @@ paths:
               schema:
                 type: "object"
                 properties:
-                  sourceSelector:
+                  sourceSelectorImplicit:
                     type: "object"
                     properties:
                       files:
@@ -222,7 +222,7 @@ paths:
                             toWellFormed:
                               type: "object"
                               properties: {}
-                            __@iterator@4108:
+                            __@iterator@4663:
                               type: "object"
                               properties: {}
                   sourceSelectorExplicit:
@@ -385,7 +385,7 @@ paths:
                             toWellFormed:
                               type: "object"
                               properties: {}
-                            __@iterator@4108:
+                            __@iterator@4663:
                               type: "object"
                               properties: {}
                   entriesArray:
@@ -402,3 +402,54 @@ paths:
                       properties:
                         relativePath:
                           type: "string"
+  /return-types/enrich-model:
+    get:
+      parameters: []
+      responses:
+        200:
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  usersBuggy:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties: {}
+                  usersFixed:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties:
+                        id:
+                          type: "number"
+                        fullName:
+                          oneOf:
+                            - type: "object"
+                            - type: "string"
+                        email:
+                          type: "string"
+                        password:
+                          type: "null"
+                        createdAt:
+                          oneOf:
+                            - type: "object"
+                            - type: "string"
+                        updatedAt:
+                          oneOf:
+                            - type: "object"
+                            - type: "string"
+                        mailto:
+                          type: "string"
+                  users:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties: {}
+                  serializedUsers:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties: {}

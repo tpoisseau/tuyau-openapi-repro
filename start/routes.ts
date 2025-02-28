@@ -30,3 +30,4 @@ router
   })
 
 router.get('return-types/weird-string-entries', [ReturnTypesController, 'weirdStringEntries'])
+router.get('return-types/enrich-model', [ReturnTypesController, 'enrichModel'])

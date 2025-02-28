@@ -15,6 +15,10 @@ type ReturntypesWeirdstringentriesGetHead = {
   request: unknown
   response: MakeTuyauResponse<import('../app/controllers/return_types_controller.ts').default['weirdStringEntries'], false>
 }
+type ReturntypesEnrichmodelGetHead = {
+  request: unknown
+  response: MakeTuyauResponse<import('../app/controllers/return_types_controller.ts').default['enrichModel'], false>
+}
 export interface ApiDefinition {
   'validators': {
     'how_to_describe_params': {
@@ -30,6 +34,12 @@ export interface ApiDefinition {
       };
       '$get': ReturntypesWeirdstringentriesGetHead;
       '$head': ReturntypesWeirdstringentriesGetHead;
+    };
+    'enrich-model': {
+      '$url': {
+      };
+      '$get': ReturntypesEnrichmodelGetHead;
+      '$head': ReturntypesEnrichmodelGetHead;
     };
   };
 }
