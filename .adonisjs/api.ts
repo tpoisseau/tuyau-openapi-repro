@@ -19,6 +19,10 @@ type ReturntypesEnrichmodelGetHead = {
   request: unknown
   response: MakeTuyauResponse<import('../app/controllers/return_types_controller.ts').default['enrichModel'], false>
 }
+type WildcardIdIdGetHead = {
+  request: MakeTuyauRequest<InferInput<typeof import('../app/validators/wildcard_params.ts')['wildcardParams']>>
+  response: MakeTuyauResponse<import('../app/controllers/wildcard_controller.ts').default['wildcardRoute'], true>
+}
 export interface ApiDefinition {
   'validators': {
     'how_to_describe_params': {
@@ -40,6 +44,18 @@ export interface ApiDefinition {
       };
       '$get': ReturntypesEnrichmodelGetHead;
       '$head': ReturntypesEnrichmodelGetHead;
+    };
+  };
+  'wildcard': {
+    ':category': {
+      ':id': {
+        '*': {
+          '$url': {
+          };
+          '$get': WildcardIdIdGetHead;
+          '$head': WildcardIdIdGetHead;
+        };
+      };
     };
   };
 }

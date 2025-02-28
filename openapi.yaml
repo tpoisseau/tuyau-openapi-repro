@@ -222,7 +222,7 @@ paths:
                             toWellFormed:
                               type: "object"
                               properties: {}
-                            __@iterator@4663:
+                            __@iterator@4756:
                               type: "object"
                               properties: {}
                   sourceSelectorExplicit:
@@ -385,7 +385,7 @@ paths:
                             toWellFormed:
                               type: "object"
                               properties: {}
-                            __@iterator@4663:
+                            __@iterator@4756:
                               type: "object"
                               properties: {}
                   entriesArray:
@@ -453,3 +453,383 @@ paths:
                     items:
                       type: "object"
                       properties: {}
+  /wildcard/{category}/{id}/*:
+    get:
+      parameters:
+        - name: "category"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "params"
+          in: "query"
+          schema:
+            type: "object"
+            properties:
+              id:
+                required: true
+                oneOf:
+                  - type: "string"
+                  - type: "number"
+              category:
+                required: true
+                type: "string"
+              *:
+                type: "array"
+                items:
+                  type: "string"
+                  properties:
+                    toString:
+                      type: "object"
+                      properties: {}
+                    charAt:
+                      type: "object"
+                      properties: {}
+                    charCodeAt:
+                      type: "object"
+                      properties: {}
+                    concat:
+                      type: "object"
+                      properties: {}
+                    indexOf:
+                      type: "object"
+                      properties: {}
+                    lastIndexOf:
+                      type: "object"
+                      properties: {}
+                    localeCompare:
+                      type: "object"
+                      properties: {}
+                    match:
+                      type: "object"
+                      properties: {}
+                    replace:
+                      type: "object"
+                      properties: {}
+                    search:
+                      type: "object"
+                      properties: {}
+                    slice:
+                      type: "object"
+                      properties: {}
+                    split:
+                      type: "object"
+                      properties: {}
+                    substring:
+                      type: "object"
+                      properties: {}
+                    toLowerCase:
+                      type: "object"
+                      properties: {}
+                    toLocaleLowerCase:
+                      type: "object"
+                      properties: {}
+                    toUpperCase:
+                      type: "object"
+                      properties: {}
+                    toLocaleUpperCase:
+                      type: "object"
+                      properties: {}
+                    trim:
+                      type: "object"
+                      properties: {}
+                    length:
+                      required: true
+                      type: "number"
+                    substr:
+                      type: "object"
+                      properties: {}
+                    valueOf:
+                      type: "object"
+                      properties: {}
+                    codePointAt:
+                      type: "object"
+                      properties: {}
+                    includes:
+                      type: "object"
+                      properties: {}
+                    endsWith:
+                      type: "object"
+                      properties: {}
+                    normalize:
+                      type: "object"
+                      properties: {}
+                    repeat:
+                      type: "object"
+                      properties: {}
+                    startsWith:
+                      type: "object"
+                      properties: {}
+                    anchor:
+                      type: "object"
+                      properties: {}
+                    big:
+                      type: "object"
+                      properties: {}
+                    blink:
+                      type: "object"
+                      properties: {}
+                    bold:
+                      type: "object"
+                      properties: {}
+                    fixed:
+                      type: "object"
+                      properties: {}
+                    fontcolor:
+                      type: "object"
+                      properties: {}
+                    fontsize:
+                      type: "object"
+                      properties: {}
+                    italics:
+                      type: "object"
+                      properties: {}
+                    link:
+                      type: "object"
+                      properties: {}
+                    small:
+                      type: "object"
+                      properties: {}
+                    strike:
+                      type: "object"
+                      properties: {}
+                    sub:
+                      type: "object"
+                      properties: {}
+                    sup:
+                      type: "object"
+                      properties: {}
+                    padStart:
+                      type: "object"
+                      properties: {}
+                    padEnd:
+                      type: "object"
+                      properties: {}
+                    trimEnd:
+                      type: "object"
+                      properties: {}
+                    trimStart:
+                      type: "object"
+                      properties: {}
+                    trimLeft:
+                      type: "object"
+                      properties: {}
+                    trimRight:
+                      type: "object"
+                      properties: {}
+                    matchAll:
+                      type: "object"
+                      properties: {}
+                    replaceAll:
+                      type: "object"
+                      properties: {}
+                    at:
+                      type: "object"
+                      properties: {}
+                    isWellFormed:
+                      type: "object"
+                      properties: {}
+                    toWellFormed:
+                      type: "object"
+                      properties: {}
+                    __@iterator@4756:
+                      type: "object"
+                      properties: {}
+      responses:
+        200:
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  params:
+                    type: "object"
+                    properties:
+                      id:
+                        type: "number"
+                      category:
+                        type: "string"
+                      *:
+                        type: "array"
+                        items:
+                          type: "string"
+                          properties:
+                            toString:
+                              type: "object"
+                              properties: {}
+                            charAt:
+                              type: "object"
+                              properties: {}
+                            charCodeAt:
+                              type: "object"
+                              properties: {}
+                            concat:
+                              type: "object"
+                              properties: {}
+                            indexOf:
+                              type: "object"
+                              properties: {}
+                            lastIndexOf:
+                              type: "object"
+                              properties: {}
+                            localeCompare:
+                              type: "object"
+                              properties: {}
+                            match:
+                              type: "object"
+                              properties: {}
+                            replace:
+                              type: "object"
+                              properties: {}
+                            search:
+                              type: "object"
+                              properties: {}
+                            slice:
+                              type: "object"
+                              properties: {}
+                            split:
+                              type: "object"
+                              properties: {}
+                            substring:
+                              type: "object"
+                              properties: {}
+                            toLowerCase:
+                              type: "object"
+                              properties: {}
+                            toLocaleLowerCase:
+                              type: "object"
+                              properties: {}
+                            toUpperCase:
+                              type: "object"
+                              properties: {}
+                            toLocaleUpperCase:
+                              type: "object"
+                              properties: {}
+                            trim:
+                              type: "object"
+                              properties: {}
+                            length:
+                              type: "number"
+                            substr:
+                              type: "object"
+                              properties: {}
+                            valueOf:
+                              type: "object"
+                              properties: {}
+                            codePointAt:
+                              type: "object"
+                              properties: {}
+                            includes:
+                              type: "object"
+                              properties: {}
+                            endsWith:
+                              type: "object"
+                              properties: {}
+                            normalize:
+                              type: "object"
+                              properties: {}
+                            repeat:
+                              type: "object"
+                              properties: {}
+                            startsWith:
+                              type: "object"
+                              properties: {}
+                            anchor:
+                              type: "object"
+                              properties: {}
+                            big:
+                              type: "object"
+                              properties: {}
+                            blink:
+                              type: "object"
+                              properties: {}
+                            bold:
+                              type: "object"
+                              properties: {}
+                            fixed:
+                              type: "object"
+                              properties: {}
+                            fontcolor:
+                              type: "object"
+                              properties: {}
+                            fontsize:
+                              type: "object"
+                              properties: {}
+                            italics:
+                              type: "object"
+                              properties: {}
+                            link:
+                              type: "object"
+                              properties: {}
+                            small:
+                              type: "object"
+                              properties: {}
+                            strike:
+                              type: "object"
+                              properties: {}
+                            sub:
+                              type: "object"
+                              properties: {}
+                            sup:
+                              type: "object"
+                              properties: {}
+                            padStart:
+                              type: "object"
+                              properties: {}
+                            padEnd:
+                              type: "object"
+                              properties: {}
+                            trimEnd:
+                              type: "object"
+                              properties: {}
+                            trimStart:
+                              type: "object"
+                              properties: {}
+                            trimLeft:
+                              type: "object"
+                              properties: {}
+                            trimRight:
+                              type: "object"
+                              properties: {}
+                            matchAll:
+                              type: "object"
+                              properties: {}
+                            replaceAll:
+                              type: "object"
+                              properties: {}
+                            at:
+                              type: "object"
+                              properties: {}
+                            isWellFormed:
+                              type: "object"
+                              properties: {}
+                            toWellFormed:
+                              type: "object"
+                              properties: {}
+                            __@iterator@4756:
+                              type: "object"
+                              properties: {}
+        422:
+          description: "Error response"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  errors:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties:
+                        message:
+                          type: "string"
+                        rule:
+                          type: "string"
+                        field:
+                          type: "string"

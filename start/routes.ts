@@ -9,6 +9,7 @@
 
 import router from '@adonisjs/core/services/router'
 
+const WildcardController = () => import('#controllers/wildcard_controller')
 const ReturnTypesController = () => import('#controllers/return_types_controller')
 const ValidatorsController = () => import('#controllers/validators_controller')
 
@@ -31,3 +32,4 @@ router
 
 router.get('return-types/weird-string-entries', [ReturnTypesController, 'weirdStringEntries'])
 router.get('return-types/enrich-model', [ReturnTypesController, 'enrichModel'])
+router.get('wildcard/:category/:id/*', [WildcardController, 'wildcardRoute']).where('id', /^\d+$/)
